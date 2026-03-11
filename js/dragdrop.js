@@ -60,23 +60,49 @@ const DragDrop = (() => {
     });
 
     // ── Section panels (drag by grip handle in section header) ─
+    // FIX: CSS Grid breaks SortableJS visual reordering.
+    // We force the container to flex during init so SortableJS
+    // can physically move elements without the grid fighting it.
     const container = document.getElementById("sectionsContainer");
     if (container) {
       const sectionSort = Sortable.create(container, {
-        animation:  250,
-        easing:     "cubic-bezier(0.4, 0, 0.2, 1)",
-        ghostClass: "section-ghost",
-        handle:     ".section-drag-handle",
-        onStart() {
+        animation:       300,
+        easing:          "cubic-bezier(0.4, 0, 0.2, 1)",
+        ghostClass:      "section-ghost",
+        chosenClass:     "section-chosen",
+        dragClass:       "section-dragging",
+        handle:          ".section-drag-handle",
+        forceFallback:   false,   // use native HTML5 DnD (works with flex)
+        scroll:          true,
+        scrollSensitivity: 80,
+        scrollSpeed:     10,
+
+        onStart(evt) {
           document.body.classList.add("is-dragging");
+          // Freeze each section's height so layout doesn't jump during drag
+          container.querySelectorAll(".section-panel").forEach(el => {
+            el.style.height = el.offsetHeight + "px";
+          });
         },
-        onEnd() {
+
+        onEnd(evt) {
           document.body.classList.remove("is-dragging");
+
+          // Unfreeze heights
+          container.querySelectorAll(".section-panel").forEach(el => {
+            el.style.height = "";
+          });
+
+          // Collect new order from the DOM (SortableJS already moved them)
           const newOrder = Array.from(container.children)
             .map((el) => el.dataset.sectionId)
             .filter(Boolean);
+
+          // Only save if position actually changed
+          if (evt.oldIndex === evt.newIndex) return;
+
           Dashboard.reorderSections(newOrder).then(() => {
-            UI.showToast("Sections reordered", "success");
+            UI.showToast("Section moved & saved ✓", "success");
           });
         },
       });
