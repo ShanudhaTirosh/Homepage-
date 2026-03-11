@@ -27,6 +27,8 @@
             --text-primary: #ffffff;
             --text-secondary: rgba(255, 255, 255, 0.8);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --accent: #667eea;
+            --danger: #ff4757;
         }
 
         [data-theme="light"] {
@@ -38,11 +40,7 @@
         }
 
         /* ===== GLOBAL STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -66,11 +64,6 @@
             box-shadow: var(--shadow);
             border-radius: 24px;
             transition: var(--transition);
-        }
-
-        .glass:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
         }
 
         /* ===== CAPSULE NAVBAR ===== */
@@ -118,20 +111,9 @@
             transition: 0.25s ease;
         }
 
-        .nav-link i {
-            font-size: 16px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        .nav-link.active {
-            background: rgba(255,255,255,0.18);
-        }
+        .nav-link i { font-size: 16px; line-height: 1; display: flex; align-items: center; }
+        .nav-link:hover { background: rgba(255,255,255,0.12); }
+        .nav-link.active { background: rgba(255,255,255,0.18); }
 
         .theme-toggle {
             height: 40px;
@@ -148,16 +130,10 @@
             transition: 0.25s ease;
         }
 
-        .theme-toggle i {
-            font-size: 16px;
-            line-height: 1;
-        }
+        .theme-toggle i { font-size: 16px; line-height: 1; }
+        .theme-toggle:hover { transform: scale(1.05); }
 
-        .theme-toggle:hover {
-            transform: scale(1.05);
-        }
-
-        /* ===== HERO SECTION - FIXED ===== */
+        /* ===== HERO SECTION ===== */
         .hero-section {
             padding: 140px 0 60px;
             text-align: center;
@@ -185,7 +161,6 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Search Wrapper - Fixed */
         .search-wrapper {
             position: relative;
             margin-bottom: 1.5rem;
@@ -201,19 +176,17 @@
             color: var(--text-primary);
             font-size: 1.1rem;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .search-input:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+            border-color: rgba(255,255,255,0.5);
+            box-shadow: 0 8px 30px rgba(102,126,234,0.3);
             transform: translateY(-2px);
         }
 
-        .search-input::placeholder {
-            color: var(--text-secondary);
-        }
+        .search-input::placeholder { color: var(--text-secondary); }
 
         .search-icon {
             position: absolute;
@@ -225,7 +198,6 @@
             pointer-events: none;
         }
 
-        /* Search Engines - Fixed */
         .search-engines {
             display: flex;
             justify-content: center;
@@ -250,27 +222,23 @@
         }
 
         .engine-btn:hover {
-            border-color: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255,255,255,0.4);
             transform: translateY(-3px);
             color: var(--text-primary);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .engine-btn.active {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
-            border-color: rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+            border-color: rgba(255,255,255,0.5);
             color: var(--text-primary);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
         }
 
-        .engine-btn i {
-            font-size: 1.1rem;
-        }
+        .engine-btn i { font-size: 1.1rem; }
 
         /* ===== WIDGETS ===== */
-        .widgets-section {
-            padding: 3rem 0;
-        }
+        .widgets-section { padding: 3rem 0; }
 
         .widget-card {
             padding: 2rem;
@@ -287,14 +255,10 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .date-display {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+        .date-display { font-size: 1.2rem; opacity: 0.9; }
 
-        /* TO-DO LIST */
         .todo-input {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 0.8rem;
@@ -303,17 +267,11 @@
             width: 100%;
         }
 
-        .todo-input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .todo-input::placeholder {
-            color: var(--text-secondary);
-        }
+        .todo-input:focus { outline: none; border-color: rgba(255,255,255,0.4); }
+        .todo-input::placeholder { color: var(--text-secondary); }
 
         .todo-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.05);
             padding: 0.8rem;
             border-radius: 10px;
             margin-bottom: 0.5rem;
@@ -323,14 +281,8 @@
             transition: var(--transition);
         }
 
-        .todo-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .todo-item.completed {
-            opacity: 0.5;
-            text-decoration: line-through;
-        }
+        .todo-item:hover { background: rgba(255,255,255,0.1); }
+        .todo-item.completed { opacity: 0.5; text-decoration: line-through; }
 
         .todo-item button {
             background: transparent;
@@ -340,47 +292,7 @@
             transition: var(--transition);
         }
 
-        .todo-item button:hover {
-            color: #ff4757;
-        }
-
-        /* ===== SHORTCUT CARDS ===== */
-        .shortcut-card {
-            padding: 2rem;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--text-primary);
-            display: block;
-            height: 100%;
-        }
-
-        .shortcut-card i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, rgba(255,255,255,0.7));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .shortcut-card h5 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .shortcut-card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin: 0;
-        }
-
-        .category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 4rem 0 2rem;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        .todo-item button:hover { color: #ff4757; }
 
         /* ===== FOOTER ===== */
         .footer-glass {
@@ -399,107 +311,854 @@
             display: inline-block;
         }
 
-        .social-icons a:hover {
-            transform: translateY(-3px) scale(1.1);
-        }
+        .social-icons a:hover { transform: translateY(-3px) scale(1.1); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .navbar-glass {
-                width: calc(100% - 24px);
-                border-radius: 22px;
-            }
-
-            .navbar-glass .container-fluid {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .navbar-nav {
-                width: 100%;
-                justify-content: center;
-                margin-top: 6px;
-            }
-
-            .theme-toggle {
-                margin-left: auto;
-            }
-
-            .hero-section {
-                padding: 120px 0 40px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .time-display {
-                font-size: 2.5rem;
-            }
-
-            .search-input {
-                padding: 1rem 1.5rem 1rem 3.25rem;
-                font-size: 1rem;
-            }
-
-            .engine-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-            }
-
-            .category-title {
-                font-size: 1.5rem;
-                margin: 3rem 0 1.5rem;
-            }
+            .navbar-glass { width: calc(100% - 24px); border-radius: 22px; }
+            .navbar-glass .container-fluid { flex-wrap: wrap; justify-content: center; }
+            .navbar-nav { width: 100%; justify-content: center; margin-top: 6px; }
+            .theme-toggle { margin-left: auto; }
+            .hero-section { padding: 120px 0 40px; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .time-display { font-size: 2.5rem; }
+            .search-input { padding: 1rem 1.5rem 1rem 3.25rem; font-size: 1rem; }
+            .engine-btn { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
         }
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-15px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* ===== SCROLL BEHAVIOR ===== */
-        html {
-            scroll-behavior: smooth;
+        @keyframes popIn {
+            0%   { opacity: 0; transform: scale(0.88); }
+            70%  { transform: scale(1.03); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
-        /* ===== CUSTOM SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 10px;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
+        .fade-in-up { animation: fadeInUp 0.6s ease-out; }
+
+        html { scroll-behavior: smooth; }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background: var(--glass-bg); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+        /* ════════════════════════════════════════════════════════
+           AUTH OVERLAY
+           ════════════════════════════════════════════════════════ */
+        .auth-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 20, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem;
+            transition: opacity 0.4s ease;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--glass-bg);
+        .auth-overlay.fade-out { opacity: 0; }
+
+        .auth-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 2.5rem;
+            border-radius: 28px;
+            animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-logo i {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .auth-logo h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0.5rem 0 0.25rem;
+        }
+
+        .auth-logo p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .auth-tabs {
+            display: flex;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50px;
+            padding: 4px;
+            margin-bottom: 1.75rem;
+        }
+
+        .auth-tab-btn {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 50px;
+            padding: 0.55rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .auth-tab-btn.active {
+            background: rgba(255,255,255,0.15);
+            color: var(--text-primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .auth-form { animation: fadeInUp 0.25s ease; }
+
+        .auth-error {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,71,87,0.15);
+            border: 1px solid rgba(255,71,87,0.3);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            color: #ff6b7a;
+            margin-bottom: 1rem;
+        }
+
+        .auth-error::before {
+            content: "⚠️";
+            font-size: 0.9rem;
+        }
+
+        .auth-input {
+            width: 100%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 0.85rem 1.1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: rgba(102,126,234,0.6);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+        }
+
+        .auth-input::placeholder { color: var(--text-secondary); }
+
+        .auth-btn {
+            width: 100%;
+            border: none;
+            border-radius: 14px;
+            padding: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+            transition: all 0.25s;
+            margin-top: 0.5rem;
+        }
+
+        .auth-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(102,126,234,0.5); }
+        .auth-btn:active { transform: translateY(0); }
+        .auth-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        /* ════════════════════════════════════════════════════════
+           DASHBOARD SECTION
+           ════════════════════════════════════════════════════════ */
+        .dashboard-section {
+            padding: 1.5rem 0 4rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+            padding: 0 1rem;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dashboard-title i {
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dashboard-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        /* ════════════════════════════════════════════════════════
+           GLASS BUTTONS (shared)
+           ════════════════════════════════════════════════════════ */
+        .glass-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.22s;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .glass-btn:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        .glass-btn.primary {
+            background: linear-gradient(135deg, rgba(102,126,234,0.5), rgba(118,75,162,0.5));
+            border-color: rgba(102,126,234,0.4);
+        }
+
+        .glass-btn.primary:hover { background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(118,75,162,0.7)); }
+
+        .glass-btn.danger { border-color: rgba(255,71,87,0.4); color: #ff8a94; }
+        .glass-btn.danger:hover { background: rgba(255,71,87,0.15); }
+
+        .glass-btn.secondary { opacity: 0.7; }
+        .glass-btn.secondary:hover { opacity: 1; }
+
+        .glass-btn.w-100 { width: 100%; justify-content: center; border-radius: 14px; }
+
+        /* ════════════════════════════════════════════════════════
+           SECTIONS CONTAINER
+           ════════════════════════════════════════════════════════ */
+        .sections-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .sections-container { grid-template-columns: 1fr; }
+        }
+
+        /* ════════════════════════════════════════════════════════
+           SECTION PANEL
+           ════════════════════════════════════════════════════════ */
+        .section-panel {
+            border-radius: 20px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: box-shadow 0.25s;
+        }
+
+        .section-panel:hover {
+            box-shadow: 0 16px 40px rgba(31,38,135,0.22);
+        }
+
+        @keyframes sectionEnter {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-enter {
+            animation: sectionEnter 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) both;
+        }
+
+        /* Drag ghost of entire section */
+        .section-ghost { opacity: 0.35; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .section-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .section-drag-handle {
+            color: rgba(255,255,255,0.3);
+            cursor: grab;
+            font-size: 1rem;
+            padding: 0.2rem;
+            border-radius: 6px;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .section-drag-handle:hover { color: rgba(255,255,255,0.7); }
+        .section-drag-handle:active { cursor: grabbing; }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-count {
+            background: rgba(255,255,255,0.12);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.1rem 0.5rem;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .section-actions {
+            display: flex;
+            gap: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .sec-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.55);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            transition: all 0.18s;
+        }
+
+        .sec-btn:hover { background: rgba(255,255,255,0.16); color: var(--text-primary); transform: scale(1.1); }
+        .sec-btn.delete-sec:hover { background: rgba(255,71,87,0.2); color: #ff8a94; }
+        .sec-btn.add-card-inline { color: rgba(102,200,102,0.8); }
+        .sec-btn.add-card-inline:hover { background: rgba(102,200,102,0.15); color: #6dc86d; }
+
+        /* ════════════════════════════════════════════════════════
+           CARDS GRID
+           ════════════════════════════════════════════════════════ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 0.7rem;
+            min-height: 40px; /* So empty sections are still a drop target */
+        }
+
+        /* ════════════════════════════════════════════════════════
+           DASHBOARD CARD
+           ════════════════════════════════════════════════════════ */
+        .dashboard-card {
+            position: relative;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.85rem 0.6rem 0.7rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+        }
+
+        .dashboard-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .dashboard-card:hover .card-actions { opacity: 1; }
+        .dashboard-card:hover .drag-handle   { opacity: 1; }
+
+        /* Drag states */
+        .card-ghost   { opacity: 0.3; border: 2px dashed rgba(102,126,234,0.6); }
+        .card-chosen  { box-shadow: 0 12px 32px rgba(102,126,234,0.4); }
+        .card-dragging {
+            background: rgba(102,126,234,0.3) !important;
+            border: 2px solid rgba(102,126,234,0.6) !important;
+            transform: rotate(2deg) scale(1.05) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
+        }
+
+        /* Hide cursor change for dragging on body */
+        body.is-dragging * { user-select: none; }
+        body.is-dragging .card-inner { pointer-events: none; }
+
+        .drag-handle {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: rgba(255,255,255,0.25);
+            font-size: 0.75rem;
+            cursor: grab;
+            opacity: 0;
+            transition: opacity 0.18s;
+            line-height: 1;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        .drag-handle:active { cursor: grabbing; }
+
+        .card-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            width: 100%;
+        }
+
+        .card-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: background 0.2s;
+        }
+
+        .card-icon-wrap i {
+            background: linear-gradient(45deg, #fff, rgba(255,255,255,0.75));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dashboard-card:hover .card-icon-wrap {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .card-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            line-height: 1.2;
+        }
+
+        .card-desc {
+            font-size: 0.62rem;
+            color: var(--text-secondary);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        /* Edit / Delete overlay on hover */
+        .card-actions {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            opacity: 0;
+            transition: opacity 0.18s;
+        }
+
+        .card-btn {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.62rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            color: rgba(255,255,255,0.8);
+            transition: all 0.15s;
+        }
+
+        .card-btn:hover { transform: scale(1.15); }
+        .card-btn.edit:hover  { background: rgba(102,126,234,0.7); color: #fff; }
+        .card-btn.del:hover   { background: rgba(255,71,87,0.7);   color: #fff; }
+
+        /* Add card tile (last in grid) */
+        .add-card-tile {
+            border-radius: 16px;
+            background: rgba(255,255,255,0.04);
+            border: 2px dashed rgba(255,255,255,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.85rem 0.6rem;
+            transition: all 0.2s;
+            min-height: 88px;
+        }
+
+        .add-card-tile i { font-size: 1.1rem; }
+        .add-card-tile:hover {
+            background: rgba(102,126,234,0.12);
+            border-color: rgba(102,126,234,0.4);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Empty dashboard state */
+        .dashboard-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .dashboard-empty i { font-size: 3.5rem; opacity: 0.3; }
+        .dashboard-empty p { margin: 1rem 0 1.5rem; font-size: 1.1rem; }
+
+        /* Loading spinner */
+        .dashboard-loading {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .spinner-ring {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        /* ════════════════════════════════════════════════════════
+           USER FLOATING ACTION BUTTON
+           ════════════════════════════════════════════════════════ */
+        .user-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 990;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.6rem;
+        }
+
+        .user-fab-main {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            font-size: 1.35rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(102,126,234,0.5);
+            transition: all 0.25s;
+            backdrop-filter: blur(10px);
+        }
+
+        .user-fab-main:hover { transform: scale(1.08); box-shadow: 0 10px 28px rgba(102,126,234,0.6); }
+
+        .user-menu {
+            border-radius: 18px;
+            padding: 1rem;
+            min-width: 200px;
+            animation: slideDown 0.2s ease;
+        }
+
+        .user-menu-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .user-menu-info strong { font-size: 0.95rem; }
+        .user-menu-info small  { font-size: 0.78rem; color: var(--text-secondary); word-break: break-all; }
+
+        .user-menu-btn {
+            width: 100%;
+            border: 1px solid rgba(255,71,87,0.25);
+            border-radius: 12px;
+            background: rgba(255,71,87,0.1);
+            color: #ff8a94;
+            padding: 0.55rem 0.8rem;
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .user-menu-btn:hover { background: rgba(255,71,87,0.2); }
+
+        /* ════════════════════════════════════════════════════════
+           MODAL OVERLAY & CARD
+           ════════════════════════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            background: rgba(10,10,20,0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.visible { opacity: 1; }
+
+        .modal-overlay.visible .modal-card {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px;
+            transform: translateY(20px) scale(0.96);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.3s;
+            max-height: 90vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .modal-card.wide-modal { max-width: 560px; }
+
+        .modal-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.4rem 1.5rem 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .modal-header-custom h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .modal-close-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: all 0.18s;
+        }
+
+        .modal-close-btn:hover { background: rgba(255,71,87,0.2); color: #ff8a94; }
+
+        .modal-body-custom { padding: 1.25rem 1.5rem; }
+
+        .modal-footer-custom {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            padding: 1rem 1.5rem 1.4rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* ════════════════════════════════════════════════════════
+           FORM INPUTS (inside modals)
+           ════════════════════════════════════════════════════════ */
+        .form-label-glass {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-input-glass {
+            width: 100%;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-input-glass:focus {
+            outline: none;
+            border-color: rgba(102,126,234,0.6);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.12);
+        }
+
+        .form-input-glass::placeholder { color: var(--text-secondary); }
+
+        /* ════════════════════════════════════════════════════════
+           ICON PICKER
+           ════════════════════════════════════════════════════════ */
+        .icon-picker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+            gap: 0.4rem;
+            max-height: 180px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            background: rgba(0,0,0,0.15);
+            border-radius: 12px;
+        }
+
+        .icon-opt {
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.15s;
+            color: var(--text-secondary);
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .icon-opt:hover  { background: rgba(255,255,255,0.14); color: var(--text-primary); transform: scale(1.1); }
+        .icon-opt.selected {
+            background: linear-gradient(135deg, rgba(102,126,234,0.4), rgba(118,75,162,0.4));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.3);
         }
+
+        /* ════════════════════════════════════════════════════════
+           SETTINGS PANEL
+           ════════════════════════════════════════════════════════ */
+        .settings-group { margin-bottom: 0.5rem; }
+        .settings-group h6 { font-weight: 700; margin-bottom: 0.3rem; font-size: 0.95rem; }
+        .settings-group p  { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
+
+        /* ════════════════════════════════════════════════════════
+           TOAST NOTIFICATIONS
+           ════════════════════════════════════════════════════════ */
+        .toast-stack {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            pointer-events: none;
+        }
+
+        .toast-item {
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            background: rgba(30,30,50,0.9);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            color: #fff;
+            opacity: 0;
+            transform: translateY(12px) scale(0.94);
+            transition: opacity 0.3s, transform 0.3s;
+            white-space: nowrap;
+        }
+
+        .toast-item.show { opacity: 1; transform: translateY(0) scale(1); }
+        .toast-success .bi { color: #5ce65c; }
+        .toast-error   .bi { color: #ff6b7a; }
+        .toast-warn    .bi { color: #ffd060; }
+        .toast-info    .bi { color: #60b4ff; }
     </style>
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- ===== NAVBAR — UNCHANGED ===== -->
     <nav class="navbar navbar-glass">
         <div class="container-fluid d-flex align-items-center">
             <ul class="navbar-nav d-flex align-items-center">
@@ -552,7 +1211,7 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== HERO SECTION — UNCHANGED ===== -->
     <section class="hero-section fade-in-up" id="home">
         <div class="container">
             <div class="search-container">
@@ -581,13 +1240,11 @@
             </div>
         </div>
     </section>
-   
 
-    <!-- ===== WIDGETS SECTION ===== -->
+    <!-- ===== WIDGETS SECTION — UNCHANGED ===== -->
     <section class="widgets-section">
         <div class="container">
             <div class="row g-4">
-                <!-- Time Widget -->
                 <div class="col-md-6">
                     <div class="glass widget-card">
                         <div class="text-center">
@@ -596,8 +1253,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- To-Do Widget -->
                 <div class="col-md-6">
                     <div class="glass widget-card">
                         <h4 class="mb-3"><i class="bi bi-check-circle-fill me-2"></i>Quick Tasks</h4>
@@ -608,247 +1263,33 @@
             </div>
         </div>
     </section>
-       <!-- ===== DEVELOPER TOOLS ===== -->
-    <div class="container">
-        <h2 class="category-title"><i class="fas fa-code me-2"></i>Development Platforms</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <a href="https://github.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-github"></i>
-                    <h5>GitHub</h5>
-                    <p>Version Control</p>
-                </a>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         DYNAMIC DASHBOARD (auth-gated)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dashboardSection" class="dashboard-section" style="display:none;">
+        <div class="container-fluid" style="max-width:1600px;">
+            <div class="dashboard-header">
+                <h2 class="dashboard-title">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                    My Dashboard
+                </h2>
+                <div class="dashboard-actions">
+                    <button class="glass-btn primary" onclick="UI.openAddSectionModal()">
+                        <i class="bi bi-plus-lg"></i> Add Section
+                    </button>
+                    <button class="glass-btn" onclick="UI.openSettingsModal()">
+                        <i class="bi bi-gear"></i> Settings
+                    </button>
+                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://gitlab.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-gitlab"></i>
-                    <h5>GitLab</h5>
-                    <p>DevOps Platform</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://figma.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-figma"></i>
-                    <h5>Figma</h5>
-                    <p>Design Tool</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://hackerrank.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-code"></i>
-                    <h5>HackerRank</h5>
-                    <p>Coding Practice</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://tryhackme.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h5>TryHackMe</h5>
-                    <p>Cyber Security</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://freecodecamp.org" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-free-code-camp"></i>
-                    <h5>FreeCode<br>Camp</h5>
-                    <p>Learn to Code</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://codepen.io" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-codepen"></i>
-                    <h5>CodePen</h5>
-                    <p>Code Playground</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="vscode://vscode.github-authentication/did-authenticate" class="glass shortcut-card">
-                    <i class="fas fa-code"></i>
-                    <h5>VS Code</h5>
-                    <p>Code Editor</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#" onclick="window.open('about:blank', '_blank', 'noopener,noreferrer'); return false;" class="glass shortcut-card">
-                    <i class="bi bi-window"></i>
-                    <h5>Blank Tab</h5>
-                    <p>Normal Mode</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#" onclick="openIncognito(); return false;" class="glass shortcut-card">
-                    <i class="bi bi-incognito"></i>
-                    <h5>Incognito Tab</h5>
-                    <p>Private Mode</p>
-                </a>
+            <div id="sectionsContainer" class="sections-container">
+                <!-- Rendered dynamically by ui.js -->
             </div>
         </div>
+    </section>
 
-        <h2 class="category-title"><i class="fas fa-robot me-2"></i>AI & Cloud Platforms</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <a href="https://aistudio.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-google"></i>
-                    <h5>Google AI Studio</h5>
-                    <p>AI Development</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://firebase.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-fire"></i>
-                    <h5>Firebase</h5>
-                    <p>Backend Platform</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://gemini.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-gem"></i>
-                    <h5>Gemini</h5>
-                    <p>Google AI</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://chat.openai.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-comments"></i>
-                    <h5>ChatGPT</h5>
-                    <p>OpenAI Assistant</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://copilot.microsoft.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-microsoft"></i>
-                    <h5>Copilot</h5>
-                    <p>Microsoft AI</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://cloud.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-google"></i>
-                    <h5>Google Cloud</h5>
-                    <p>Cloud Services</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://claude.ai" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-brain"></i>
-                    <h5>Claude</h5>
-                    <p>Anthropic AI</p>
-                </a>
-            </div>
-        </div>
-
-        <h2 class="category-title"><i class="fas fa-photo-video me-2"></i>Media & Finance</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <a href="https://youtube.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-youtube"></i>
-                    <h5>YouTube</h5>
-                    <p>Video Platform</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://open.spotify.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-spotify"></i>
-                    <h5>Spotify</h5>
-                    <p>Music Streaming</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://bybit.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h5>Bybit</h5>
-                    <p>Crypto Trading</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://pay.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-google-pay"></i>
-                    <h5>Google Pay</h5>
-                    <p>Digital Payments</p>
-                </a>
-            </div>
-        </div>
-
-        <h2 class="category-title"><i class="fas fa-user-circle me-2"></i>Accounts & Services</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <a href="https://myaccount.google.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-google"></i>
-                    <h5>Google Account</h5>
-                    <p>Manage Settings</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://account.microsoft.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-microsoft"></i>
-                    <h5>Microsoft Account</h5>
-                    <p>Account Settings</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://www.office.com" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h5>Microsoft 365</h5>
-                    <p>Office Suite</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://myaccount.google.com/connections" target="_blank" class="glass shortcut-card">
-                    <i class="fas fa-link"></i>
-                    <h5>Linked Accounts</h5>
-                    <p>Connected Apps</p>
-                </a>
-            </div>
-        </div>
-
-        <h2 class="category-title"><i class="fas fa-share-alt me-2"></i>Social & Communication</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <a href="https://web.whatsapp.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-whatsapp"></i>
-                    <h5>WhatsApp Web</h5>
-                    <p>Messaging</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://facebook.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-facebook"></i>
-                    <h5>Facebook</h5>
-                    <p>Social Network</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://twitter.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-twitter"></i>
-                    <h5>Twitter / X</h5>
-                    <p>Social Media</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://instagram.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-instagram"></i>
-                    <h5>Instagram</h5>
-                    <p>Photo Sharing</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://linkedin.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-linkedin"></i>
-                    <h5>LinkedIn</h5>
-                    <p>Professional Network</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="https://reddit.com" target="_blank" class="glass shortcut-card">
-                    <i class="fab fa-reddit"></i>
-                    <h5>Reddit</h5>
-                    <p>Communities</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER — UNCHANGED ===== -->
     <footer class="footer-glass mt-5">
         <div class="container">
             <div class="row align-items-center">
@@ -857,32 +1298,263 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="social-icons">
-                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com"   target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com"  target="_blank"><i class="fab fa-twitter"></i></a>
                         <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://youtube.com"  target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         AUTH OVERLAY — shown when user is not logged in
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="authOverlay" class="auth-overlay">
+        <div class="auth-card glass">
+            <div class="auth-logo">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+                <h2>Dashboard</h2>
+                <p>Sign in to access your personalized workspace</p>
+            </div>
+
+            <!-- Tab switcher -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" data-tab="login">Sign In</button>
+                <button class="auth-tab-btn"        data-tab="register">Create Account</button>
+            </div>
+
+            <!-- Login form -->
+            <div id="loginForm" class="auth-form">
+                <div class="auth-error" style="display:none;"></div>
+                <input type="email"    id="loginEmail"    class="auth-input" placeholder="Email address" autocomplete="email">
+                <input type="password" id="loginPassword" class="auth-input" placeholder="Password"      autocomplete="current-password">
+                <button id="loginBtn" class="auth-btn">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                </button>
+            </div>
+
+            <!-- Register form -->
+            <div id="registerForm" class="auth-form" style="display:none;">
+                <div class="auth-error" style="display:none;"></div>
+                <input type="text"     id="registerName"    class="auth-input" placeholder="Display name" autocomplete="name">
+                <input type="email"    id="registerEmail"   class="auth-input" placeholder="Email address" autocomplete="email">
+                <input type="password" id="registerPassword"class="auth-input" placeholder="Password (min 6 characters)" autocomplete="new-password">
+                <input type="password" id="registerConfirm" class="auth-input" placeholder="Confirm password" autocomplete="new-password">
+                <button id="registerBtn" class="auth-btn">
+                    <i class="bi bi-person-plus me-2"></i>Create Account
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         USER FLOATING ACTION BUTTON
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="userFloatingBtn" class="user-fab" style="display:none;">
+        <!-- User menu (toggle) -->
+        <div id="userMenu" class="user-menu glass" style="display:none;">
+            <div class="user-menu-info">
+                <strong id="userDisplayName">User</strong>
+                <small  id="userEmail">email@example.com</small>
+            </div>
+            <hr style="border-color:rgba(255,255,255,0.1); margin:0.5rem 0;">
+            <button id="logoutBtn" class="user-menu-btn">
+                <i class="bi bi-box-arrow-right me-2"></i>Sign Out
+            </button>
+        </div>
+        <!-- FAB trigger -->
+        <button class="user-fab-main" onclick="UI.toggleUserMenu()" title="Account">
+            <i class="bi bi-person-circle"></i>
+        </button>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         TOAST CONTAINER
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="toastContainer" class="toast-stack"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         MODAL: Add / Edit Section
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="sectionModalOverlay" class="modal-overlay" style="display:none;"
+         onclick="if(event.target===this)UI.closeModal('sectionModal')">
+        <div class="modal-card glass">
+            <div class="modal-header-custom">
+                <h5 id="sectionModalTitle">Add Section</h5>
+                <button class="modal-close-btn" onclick="UI.closeModal('sectionModal')">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body-custom">
+                <div id="sectionModalForm" data-mode="add" data-section-id="">
+                    <label class="form-label-glass">Section Name</label>
+                    <input type="text" id="sectionNameInput" class="form-input-glass"
+                           placeholder="e.g. 💻 Development"
+                           onkeypress="if(event.key==='Enter')UI.saveSectionModal()">
+                </div>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="glass-btn secondary" onclick="UI.closeModal('sectionModal')">Cancel</button>
+                <button class="glass-btn primary"   onclick="UI.saveSectionModal()">Save Section</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         MODAL: Add / Edit Card
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="cardModalOverlay" class="modal-overlay" style="display:none;"
+         onclick="if(event.target===this)UI.closeModal('cardModal')">
+        <div class="modal-card glass wide-modal">
+            <div class="modal-header-custom">
+                <h5 id="cardModalTitle">Add Card</h5>
+                <button class="modal-close-btn" onclick="UI.closeModal('cardModal')">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body-custom">
+                <div id="cardModalForm" data-mode="add" data-section-id="" data-card-id="">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label-glass">Title *</label>
+                            <input type="text" id="cardTitleInput" class="form-input-glass" placeholder="e.g. GitHub">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label-glass">Description</label>
+                            <input type="text" id="cardDescInput" class="form-input-glass" placeholder="e.g. Version Control">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label-glass">URL *</label>
+                            <input type="url" id="cardUrlInput" class="form-input-glass" placeholder="https://...">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label-glass">Icon — Click to pick or type class</label>
+                            <div id="iconPickerGrid" class="icon-picker-grid mb-2"></div>
+                            <div class="d-flex align-items-center gap-2 mt-1">
+                                <i id="iconPreview" class="fas fa-link" style="font-size:1.5rem; min-width:28px; text-align:center;"></i>
+                                <input type="text" id="cardIconInput" class="form-input-glass"
+                                       placeholder="fas fa-link  or  bi bi-house-fill" style="flex:1;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="glass-btn secondary" onclick="UI.closeModal('cardModal')">Cancel</button>
+                <button class="glass-btn primary"   onclick="UI.saveCardModal()">Save Card</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         MODAL: Settings
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="settingsModalOverlay" class="modal-overlay" style="display:none;"
+         onclick="if(event.target===this)UI.closeModal('settingsModal')">
+        <div class="modal-card glass">
+            <div class="modal-header-custom">
+                <h5><i class="bi bi-gear me-2"></i>Dashboard Settings</h5>
+                <button class="modal-close-btn" onclick="UI.closeModal('settingsModal')">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="settings-group">
+                    <h6><i class="bi bi-plus-circle me-2"></i>Add Section</h6>
+                    <p>Create a new section to organize your shortcuts.</p>
+                    <button class="glass-btn primary w-100"
+                            onclick="UI.closeModal('settingsModal');UI.openAddSectionModal()">
+                        <i class="bi bi-plus-lg me-2"></i>New Section
+                    </button>
+                </div>
+                <hr style="border-color:rgba(255,255,255,0.1); margin:1.25rem 0;">
+                <div class="settings-group">
+                    <h6><i class="bi bi-info-circle me-2"></i>Tips</h6>
+                    <p style="line-height:1.7;">
+                        • <strong>Drag</strong> the ⠿ handle on cards to reorder or move between sections.<br>
+                        • <strong>Drag</strong> the ⠿ handle in a section header to reorder sections.<br>
+                        • <strong>Hover</strong> a card to reveal Edit / Delete buttons.<br>
+                        • All changes are <strong>saved instantly</strong> to your account.
+                    </p>
+                </div>
+                <hr style="border-color:rgba(255,255,255,0.1); margin:1.25rem 0;">
+                <div class="settings-group">
+                    <h6 style="color:#ff8a94;"><i class="bi bi-arrow-counterclockwise me-2"></i>Reset Layout</h6>
+                    <p>Restore the default sections and shortcuts. All customizations will be lost.</p>
+                    <button class="glass-btn danger w-100" onclick="UI.resetLayoutConfirm()">
+                        <i class="bi bi-arrow-counterclockwise me-2"></i>Reset to Defaults
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="glass-btn" onclick="UI.closeModal('settingsModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         MODAL: Confirm (generic)
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="confirmModalOverlay" class="modal-overlay" style="display:none;"
+         onclick="if(event.target===this)UI.closeModal('confirmModal')">
+        <div class="modal-card glass">
+            <div class="modal-header-custom">
+                <h5 id="confirmModalTitle">Confirm</h5>
+                <button class="modal-close-btn" onclick="UI.closeModal('confirmModal')">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body-custom">
+                <p id="confirmModalMessage" style="color:var(--text-secondary); line-height:1.6;"></p>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="glass-btn secondary" onclick="UI.closeModal('confirmModal')">Cancel</button>
+                <button id="confirmModalBtn" class="glass-btn danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════
+         SCRIPTS
+         Load order: Bootstrap → Firebase → SortableJS → Modules → App
+         ════════════════════════════════════════════════════════════ -->
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Firebase SDK (compat — no bundler needed) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <!-- SortableJS (drag & drop) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+
+    <!-- App modules (must load in this order) -->
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/dragdrop.js"></script>
+    <script src="js/ui.js"></script>
+
     <script>
-        // ===== THEME TOGGLE =====
+        // ═══════════════════════════════════════════════════════
+        // ORIGINAL SCRIPTS — UNCHANGED (Theme, Time, Search, Todo)
+        // ═══════════════════════════════════════════════════════
+
+        // ── Theme Toggle ─────────────────────────────────────
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
-        
-        // Load saved theme
+
         const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-theme', savedTheme);
         updateThemeIcon(savedTheme);
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const current  = htmlElement.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
@@ -893,30 +1565,20 @@
             icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
         }
 
-        // ===== TIME & DATE WIDGET =====
+        // ── Time & Date ───────────────────────────────────────
         function updateTime() {
             const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', { 
-                hour12: true, 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit' 
+            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('en-US', {
+                hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit'
             });
-            const dateString = now.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+            document.getElementById('dateDisplay').textContent = now.toLocaleDateString('en-US', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
             });
-            
-            document.getElementById('timeDisplay').textContent = timeString;
-            document.getElementById('dateDisplay').textContent = dateString;
         }
-
         updateTime();
         setInterval(updateTime, 1000);
-        
-        // ===== SEARCH FUNCTIONALITY =====
+
+        // ── Search ────────────────────────────────────────────
         const searchInput = document.getElementById('searchInput');
         let selectedEngine = 'google';
 
@@ -931,53 +1593,43 @@
 
         function performSearch() {
             const query = searchInput.value.trim();
-            if (!query) {
-                searchInput.focus();
-                return false;
-            }
-
+            if (!query) { searchInput.focus(); return false; }
             const engines = {
-                google: `https://www.google.com/search?q=${encodeURIComponent(query)}`,
-                bing: `https://www.bing.com/search?q=${encodeURIComponent(query)}`,
-                brave: `https://search.brave.com/search?q=${encodeURIComponent(query)}`,
-                duckduckgo: `https://duckduckgo.com/?q=${encodeURIComponent(query)}`
+                google:    `https://www.google.com/search?q=${encodeURIComponent(query)}`,
+                bing:      `https://www.bing.com/search?q=${encodeURIComponent(query)}`,
+                brave:     `https://search.brave.com/search?q=${encodeURIComponent(query)}`,
+                duckduckgo:`https://duckduckgo.com/?q=${encodeURIComponent(query)}`
             };
-
             window.open(engines[selectedEngine], '_blank');
             searchInput.value = '';
             searchInput.blur();
-            
             return false;
         }
 
         searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch();
-            }
+            if (e.key === 'Enter') { e.preventDefault(); performSearch(); }
         });
-        
-              // ===== TO-DO LIST =====
+
+        // ── To-Do List ────────────────────────────────────────
         const todoInput = document.getElementById('todoInput');
-        const todoList = document.getElementById('todoList');
+        const todoList  = document.getElementById('todoList');
         let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
         function renderTodos() {
             todoList.innerHTML = '';
             todos.forEach((todo, index) => {
-                const todoItem = document.createElement('div');
-                todoItem.className = `todo-item ${todo.completed ? 'completed' : ''}`;
-                todoItem.innerHTML = `
+                const item = document.createElement('div');
+                item.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+                item.innerHTML = `
                     <div>
-                        <input type="checkbox" ${todo.completed ? 'checked' : ''} 
+                        <input type="checkbox" ${todo.completed ? 'checked' : ''}
                                onchange="toggleTodo(${index})" class="me-2">
                         <span>${todo.text}</span>
                     </div>
                     <button onclick="deleteTodo(${index})" class="btn btn-sm">
                         <i class="bi bi-trash"></i>
-                    </button>
-                `;
-                todoList.appendChild(todoItem);
+                    </button>`;
+                todoList.appendChild(item);
             });
         }
 
@@ -1004,37 +1656,142 @@
 
         renderTodos();
 
-        // ===== INCOGNITO TAB =====
+        // ── Incognito (browser limitation notice) ─────────────
         function openIncognito() {
-            alert('Incognito mode must be opened through your browser menu (Ctrl+Shift+N or Cmd+Shift+N)');
+            alert('Incognito mode must be opened through your browser menu (Ctrl+Shift+N / Cmd+Shift+N).');
         }
 
-        // ===== SMOOTH SCROLL =====
+        // ── Smooth scroll ─────────────────────────────────────
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // ===== FADE IN ANIMATION ON SCROLL =====
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // ── Fade-in on scroll (original widgets/hero) ─────────
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('fade-in-up'); }),
+            { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+        document.querySelectorAll('.glass').forEach(el => observer.observe(el));
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
+
+        // ═══════════════════════════════════════════════════════
+        // NEW — AUTHENTICATION & DASHBOARD INITIALIZATION
+        // ═══════════════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ── Auth state listener ──────────────────────────
+            Auth.onAuthStateChange(async (user) => {
+                if (user) {
+                    // User is signed in
+                    UI.updateUserInfo(user);
+                    UI.hideAuthOverlay();
+                    UI.showDashboardLoading();
+
+                    const result = await Dashboard.loadSections(user.uid);
+
+                    if (result.success) {
+                        UI.renderDashboard(result.sections);
+                        if (result.isNew) {
+                            UI.showToast(
+                                `Welcome, ${user.displayName || 'friend'}! Your dashboard is ready 🎉`,
+                                'success', 5000
+                            );
+                        }
+                    } else {
+                        UI.showToast('Error loading dashboard: ' + result.error, 'error', 6000);
+                    }
+                } else {
+                    // User is signed out
+                    UI.showAuthOverlay();
                 }
             });
-        }, observerOptions);
 
-        document.querySelectorAll('.glass').forEach(el => observer.observe(el));
+            // ── Auth tab switching ───────────────────────────
+            document.querySelectorAll('.auth-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.querySelectorAll('.auth-form').forEach(f => f.style.display = 'none');
+                    document.getElementById(tab + 'Form').style.display = 'block';
+                    // Clear errors on tab switch
+                    document.querySelectorAll('.auth-error').forEach(e => e.style.display = 'none');
+                });
+            });
+
+            // ── Login ────────────────────────────────────────
+            document.getElementById('loginBtn').addEventListener('click', async () => {
+                const email    = document.getElementById('loginEmail').value.trim();
+                const password = document.getElementById('loginPassword').value;
+                UI.setAuthError('', 'loginForm');
+
+                if (!email || !password) {
+                    UI.setAuthError('Please fill in all fields.', 'loginForm');
+                    return;
+                }
+
+                const btn = document.getElementById('loginBtn');
+                btn.disabled    = true;
+                btn.innerHTML   = '<span class="spinner-border spinner-border-sm me-2"></span>Signing in…';
+
+                const result = await Auth.login(email, password);
+
+                btn.disabled    = false;
+                btn.innerHTML   = '<i class="bi bi-box-arrow-in-right me-2"></i>Sign In';
+
+                if (!result.success) UI.setAuthError(result.error, 'loginForm');
+            });
+
+            // Allow Enter key on login fields
+            ['loginEmail','loginPassword'].forEach(id => {
+                document.getElementById(id)?.addEventListener('keypress', e => {
+                    if (e.key === 'Enter') document.getElementById('loginBtn').click();
+                });
+            });
+
+            // ── Register ─────────────────────────────────────
+            document.getElementById('registerBtn').addEventListener('click', async () => {
+                const name     = document.getElementById('registerName').value.trim();
+                const email    = document.getElementById('registerEmail').value.trim();
+                const password = document.getElementById('registerPassword').value;
+                const confirm  = document.getElementById('registerConfirm').value;
+                UI.setAuthError('', 'registerForm');
+
+                if (!name || !email || !password || !confirm) {
+                    UI.setAuthError('Please fill in all fields.', 'registerForm');
+                    return;
+                }
+                if (password !== confirm) {
+                    UI.setAuthError('Passwords do not match.', 'registerForm');
+                    return;
+                }
+                if (password.length < 6) {
+                    UI.setAuthError('Password must be at least 6 characters.', 'registerForm');
+                    return;
+                }
+
+                const btn = document.getElementById('registerBtn');
+                btn.disabled  = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Creating account…';
+
+                const result = await Auth.register(email, password, name);
+
+                btn.disabled  = false;
+                btn.innerHTML = '<i class="bi bi-person-plus me-2"></i>Create Account';
+
+                if (!result.success) UI.setAuthError(result.error, 'registerForm');
+            });
+
+            // ── Logout ───────────────────────────────────────
+            document.getElementById('logoutBtn').addEventListener('click', async () => {
+                await Auth.logout();
+                UI.showToast('Signed out successfully', 'success');
+            });
+        });
     </script>
 </body>
 </html>
