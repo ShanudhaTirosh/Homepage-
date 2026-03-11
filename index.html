@@ -573,27 +573,15 @@
         /* ════════════════════════════════════════════════════════
            SECTIONS CONTAINER
            ════════════════════════════════════════════════════════ */
-        /* BUG FIX: Replaced CSS Grid with Flexbox.
-           SortableJS moves DOM nodes via insertBefore() — CSS Grid
-           re-auto-places them back into the original cell after every
-           DOM mutation, making sections visually snap back even though
-           the DOM order changed. Flexbox always respects DOM order. */
         .sections-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
             padding: 0 1rem;
-            align-items: flex-start;
-        }
-
-        .sections-container .section-panel {
-            flex: 1 1 320px;
-            max-width: 100%;
-            min-width: 280px;
         }
 
         @media (max-width: 640px) {
-            .sections-container .section-panel { flex: 1 1 100%; min-width: 0; }
+            .sections-container { grid-template-columns: 1fr; }
         }
 
         /* ════════════════════════════════════════════════════════
@@ -622,23 +610,7 @@
         }
 
         /* Drag ghost of entire section */
-        /* Section drag states */
-        .section-ghost {
-            opacity: 0.3;
-            border: 2px dashed rgba(102,126,234,0.5) !important;
-            background: rgba(102,126,234,0.08) !important;
-        }
-
-        .section-chosen {
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
-            z-index: 10;
-        }
-
-        .section-dragging {
-            transform: rotate(1deg) scale(1.02) !important;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5) !important;
-            cursor: grabbing !important;
-        }
+        .section-ghost { opacity: 0.35; }
 
         .section-header {
             display: flex;
@@ -1385,7 +1357,7 @@
         <div id="userMenu" class="user-menu glass" style="display:none;">
             <div class="user-menu-info">
                 <strong id="userDisplayName">User</strong>
-                <small  id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f59098949c99b5908d9498859990db969a98">[email&#160;protected]</a></small>
+                <small  id="userEmail">email@example.com</small>
             </div>
             <hr style="border-color:rgba(255,255,255,0.1); margin:0.5rem 0;">
             <button id="logoutBtn" class="user-menu-btn">
@@ -1550,7 +1522,7 @@
          ════════════════════════════════════════════════════════════ -->
 
     <!-- Bootstrap JS -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Firebase SDK (compat — no bundler needed) -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -1815,4 +1787,11 @@
             });
 
             // ── Logout ───────────────────────────────────────
-            document.get
+            document.getElementById('logoutBtn').addEventListener('click', async () => {
+                await Auth.logout();
+                UI.showToast('Signed out successfully', 'success');
+            });
+        });
+    </script>
+</body>
+</html>
